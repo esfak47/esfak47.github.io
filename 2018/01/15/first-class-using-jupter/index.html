@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Jupyter Notebook 快速入门 · 光光的小站</title><meta name="description" content="Jupyter Notebook 快速入门 - Tony Wang"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://esfak47.github.io/atom.xml" title="光光的小站"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/6327633239" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/esfak47" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Jupyter Notebook 快速入门</h1><div class="post-info">Jan 15, 2018</div><div class="post-content"><p>Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。在本文中，我们将介绍 Jupyter notebook 的主要特性，以及为什么对于希望编写漂亮的交互式文档的人来说是一个强大工具。</p>
+<p>在开始使用 notebook 之前，我们先需要安装该库。你可以在<a href="https://jupyter.readthedocs.org/en/latest/install.html" target="_blank" rel="noopener"> Jupyter 官网</a>上找到完整的步骤。</p>
+<a id="more"></a>
+<h2 id="一、安装Jupyter"><a href="#一、安装Jupyter" class="headerlink" title="一、安装Jupyter"></a>一、安装Jupyter</h2><h2 id="新版本Anaconda自带Jupyter"><a href="#新版本Anaconda自带Jupyter" class="headerlink" title="新版本Anaconda自带Jupyter"></a>新版本Anaconda自带Jupyter</h2><p>目前，最新版本的Anaconda是自带Jupyter NoteBook的，不需要再单独安装 </p>
+<p><img src="http://static.zybuluo.com/lutingting/gfogzj413i2kot7j99bbdjbc/image_1b4e5l3s6r5i18ok1rnd195i1u549.png" alt="image_1b4e5l3s6r5i18ok1rnd195i1u549.png-31.6kB"></p>
+<h2 id="老版本Anacodna需自己安装Jupyter"><a href="#老版本Anacodna需自己安装Jupyter" class="headerlink" title="老版本Anacodna需自己安装Jupyter"></a>老版本Anacodna需自己安装Jupyter</h2><p><code>[Jupyter Notebook安装的官方网站](http://jupyter.readthedocs.io/en/latest/install.html)</code></p>
+<ul>
+<li>安装Jupyter Notebook的<strong>先决条件</strong>：已经安装了python（python 2.7 或者是python3.3）</li>
+<li>具体的安装方法：<ul>
+<li>官方建议利用Anaconda安装Jupyter</li>
+<li>安装完成Anaconda后，如果该Anaconda并不自带Jupyter Noterbook，那么，打开cmd，输入：<code>conda install jupyter</code></li>
+</ul>
+</li>
+<li><strong>这样安装完的jupyter不具有New a terminal的功能</strong><br>经过各种查询才知道，原来是因为windows不具有terminal需要的TTY，所以，windows下的jupyter是不支持Terminal模式的，而且短期内也没有增加这种支持的计划</li>
+</ul>
+<h1 id="二、更改Jupyter-notebook的工作空间"><a href="#二、更改Jupyter-notebook的工作空间" class="headerlink" title="二、更改Jupyter notebook的工作空间"></a>二、更改Jupyter notebook的工作空间</h1><p><strong>如何找到该配置文件</strong></p>
+<ul>
+<li><p>在cmd中输入<code>jupyter notebook --generate-config</code></p>
+</li>
+<li><p>如果该配置文件已经存在，那么，会出现如下信息,从中可以见到配置文件存在的位置，注意，此时，输入N，不要overwrite </p>
+<p>​</p>
+</li>
+</ul>
+<p><img src="http://static.zybuluo.com/lutingting/cdan3d424oinr691ppo8qe2h/image_1b4e641ot340t3g1asfdv81972m.png" alt="image_1b4e641ot340t3g1asfdv81972m.png-16.9kB"></p>
+<hr>
+<p><strong>在其配置文件ipython_notebook_config.py中，有如下一句</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The directory to use for notebooks and kernels.</span></span><br><span class="line"><span class="comment"># c.NotebookApp.notebook_dir = u''</span></span><br></pre></td></tr></table></figure>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><h3 id="简单的操作符"><a href="#简单的操作符" class="headerlink" title="简单的操作符"></a>简单的操作符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>**<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<pre><code>4
+</code></pre><h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><ul>
+<li>执行当前cell，并自动跳到下一个cell：<code>Shift Enter</code></li>
+<li>执行当前cell，执行后不自动调转到下一个cell：<code>Ctrl-Enter</code></li>
+<li>是当前的cell进入编辑模式：<code>Enter</code></li>
+<li>退出当前cell的编辑模式：<code>Esc</code></li>
+<li>删除当前的cell：双D</li>
+<li>为当前的cell加入line number：单L</li>
+<li>将当前的cell转化为具有一级标题的maskdown：单1</li>
+<li>将当前的cell转化为具有二级标题的maskdown：单2</li>
+<li>将当前的cell转化为具有三级标题的maskdown：单3</li>
+<li>为一行或者多行添加/取消注释：<code>Crtl /</code></li>
+<li>撤销对某个cell的删除：<code>z</code></li>
+<li>浏览器的各个Tab之间切换：<code>Crtl PgUp</code>和<code>Crtl PgDn</code></li>
+<li>快速跳转到首个cell：<code>Crtl Home</code></li>
+<li>快速跳转到最后一个cell：<code>Crtl End</code></li>
+</ul>
+<h3 id="多行操作同样支持"><a href="#多行操作同样支持" class="headerlink" title="多行操作同样支持"></a>多行操作同样支持</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">  print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>0
+1
+2
+3
+4
+</code></pre><h3 id="你还可以使用-LaTex-来生成数学公式"><a href="#你还可以使用-LaTex-来生成数学公式" class="headerlink" title="你还可以使用 LaTex 来生成数学公式"></a>你还可以使用 LaTex 来生成数学公式</h3><p><code>$$\int_0^{+\infty} x^2 dx$$</code></p>
+<p>$$\int_0^{+\infty} x^2 dx$$</p>
+<h3 id="导出功能"><a href="#导出功能" class="headerlink" title="导出功能"></a>导出功能</h3><p><strong>notebook 还有一个强大的特性，就是其导出功能。可以将 notebook 导出为多种格式：</strong></p>
+<ul>
+<li>HTML</li>
+<li>markdown</li>
+<li>pdf</li>
+<li>ReST</li>
+<li>raw python</li>
+</ul>
+<h3 id="Matplotlib-集成"><a href="#Matplotlib-集成" class="headerlink" title="Matplotlib 集成"></a>Matplotlib 集成</h3><p>如果你用 Python 绘制过图形，那你肯定知道 matplotlib。Matplotlib 是一个用于创建漂亮图形的 Python 库，结合 Jupyter notebook 使用时体验更佳。</p>
+<p>要想在 Jupyter notebook 中使用 matplotlib，需要告诉 Jupyter 获取 matplotlib 生成的所有图形，并将其嵌入 notebook 中。为此，需要计算：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<p>为了执行成功你可能需要首先安装matplotlib<code>pip installl matplotlib</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">20</span>)</span><br><span class="line">y = x**<span class="number">2</span></span><br><span class="line"></span><br><span class="line">plt.plot(x, y)</span><br></pre></td></tr></table></figure>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6d288b8f98&gt;]
+</code></pre><p><img src="/images/output_15_1.png" alt="png"></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2018/01/08/why-we-droped-our-dream/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://esfak47.github.io">Tony Wang</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
